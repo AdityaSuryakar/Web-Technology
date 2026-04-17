@@ -22,6 +22,7 @@
 
 ====Activity01=====
 Diff b/w package.json vs package-Lock.json
+
 ====Activity02===
 Diff b/w dev dependencies vs dependencies
 ====Activity03====

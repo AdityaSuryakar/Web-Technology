@@ -1,0 +1,38 @@
+========================File Structure=============================
+package.json  - It is the config file , info about your project , 
+package.lock.json - It is the config file contains detailed info about project
+angular.json -  project config file
+style.css - global css
+.gitignore - version control file
+.editorconfig - Editor/Vs Setting
+index.html - main HTML file load angular
+main.ts - Entry point of app
+app.config.ts - App config file
+
+==========Datatype===========
+1]Premitive
+2]non Premitive
+
+
+===========Components============
+    These are UI blocks.
+    When we create components it create 4 file html, css, ts, spec.ts
+    >ng generate component component_name / ng g c component_name
+
+=========Data Binding============
+It connects UI to port
+    There are 2 type of 
+    A]One Way
+        a]Interpolation : {{value}}
+        b]Property : {property} = "value
+        c]Event : {event} = "handler"
+    B]two way
+        >ng model :  [(ngmodel)]rewq678][po567qwer\po zxc.]
+
+
+
+
+================Activity 01===============
+Angular - How to use if..else , for loop, switch cases in angular ???
+
+

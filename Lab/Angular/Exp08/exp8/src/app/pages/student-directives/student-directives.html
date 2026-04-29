@@ -1,0 +1,53 @@
+<h2>Task 2: Directives with Div (Color Change)</h2>
+
+<!-- TOGGLE BUTTON -->
+<button (click)="toggleDiv()">Show / Hide Div</button>
+
+<br><br>
+
+<!-- IF CONDITION -->
+<p><b>&#64;if Condition:</b></p>
+
+@if (showDiv) {
+
+  @switch (colorType) {
+
+    @case ('red') {
+      <div style="background-color: red; color: white; padding: 20px;">
+        Red Div ({{ colorType }})
+      </div>
+    }
+
+    @case ('blue') {
+      <div style="background-color: blue; color: white; padding: 20px;">
+        Blue Div ({{ colorType }})
+      </div>
+    }
+
+    @case ('green') {
+      <div style="background-color: green; color: white; padding: 20px;">
+        Green Div ({{ colorType }})
+      </div>
+    }
+
+    @default {
+      <div style="background-color: gray; color: white; padding: 20px;">
+        Default Div ({{ colorType }})
+      </div>
+    }
+
+  }
+
+} @else {
+  <p>Div is Hidden</p>
+}
+
+<hr>
+
+<!-- COLOR BUTTONS -->
+<p><b>Change Color:</b></p>
+
+<button (click)="changeColor('red')">Red</button>
+<button (click)="changeColor('blue')">Blue</button>
+<button (click)="changeColor('green')">Green</button>
+<button (click)="changeColor('other')">Default</button>

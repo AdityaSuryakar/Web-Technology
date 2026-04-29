@@ -1,0 +1,17 @@
+body {
+  font-family: Arial;
+  text-align: center;
+}
+
+button {
+  padding: 10px;
+  margin: 10px;
+  background-color: blue;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+div{
+  border-radius: 10px;
+}

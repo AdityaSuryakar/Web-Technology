@@ -1,0 +1,22 @@
+Angular is a typescript(typesafety) based web app framework developed by Google
+Either React(library) or angular (framework ) is used
+Angular is SPA (single page app) page dont reload after navigation.
+
+//Installation
+1. chck node version
+2.  npm install -g @angular/cli
+3. ng new file name
+opn in integrated terminal folder
+4. ng serve to run
+
+g- globally
+cli - cmd line interface
+src - working folder
+app is a root folder
+
+//how to create components in ng
+ ng g c Home
+ g - generate 
+ c - components
+
+ Always bind ur html files to app

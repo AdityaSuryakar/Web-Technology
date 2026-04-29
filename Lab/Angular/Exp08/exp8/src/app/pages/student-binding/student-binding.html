@@ -1,0 +1,75 @@
+<h2>Task 1: Data Binding</h2>
+
+<p><b>One Way Binding:</b> Data flows in only one direction (Model → View or View → Model).</p>
+
+<p><b>Subtypes:</b></p>
+<p>1. <b>Interpolation:</b> Uses {{ '{' }}{{ '}' }} to display data from model to view.</p>
+<p>2. <b>Property Binding:</b> Binds data from model to HTML element properties using syntax like [property]="value".</p>
+<p>3. <b>Attribute Binding:</b> Binds data to HTML attributes such as colspan, aria-* when property binding is not applicable.</p>
+<p>4. <b>Event Binding:</b> Handles user actions like clicks or input.</p>
+
+<p><b>Two Way Binding:</b> Data flows in both directions (Model ↔ View).</p>
+
+<p><b>Type:</b></p>
+<p>1. <b>ngModel:</b> Enables two-way data binding by combining property and event binding; commonly used in forms.</p>
+
+<hr>
+
+<!-- Step 1 -->
+<p><b>Step 1: Interpolation</b></p>
+<p>Student Name: {{ studentName }}</p>
+<p>Student Age: {{ studentAge }}</p>
+<hr>
+
+<!-- Step 2 -->
+<p><b>Step 2: Property Binding</b></p>
+<img [src]="imageUrl" width="150" height="150">
+<hr>
+
+<!-- Step 3 -->
+<p><b>Step 3: Two-Way Binding</b></p>
+
+<input [(ngModel)]="studentName" placeholder="Enter Name">
+<br><br>
+<input [(ngModel)]="studentAge" type="number" placeholder="Enter Age">
+<br><br>
+<input [(ngModel)]="course" placeholder="Enter Course">
+
+
+<!-- Step 4 -->
+<p><b>Step 4: Event Binding</b></p>
+
+<button (click)="updateDetails()">Update Details</button>
+
+<p>{{ message }}</p>
+
+<p><b>Updated Details:</b></p>
+<p>Name: {{ studentName }}</p>
+<p>Age: {{ studentAge }}</p>
+<p>Course: {{ course }}</p>
+
+<hr>
+
+<!-- Step 5 -->
+<p><b>Step 5: Add Student</b></p>
+
+<input [(ngModel)]="newStudent" placeholder="Enter student name">
+<button (click)="addStudent()">Add</button>
+
+<hr>
+
+<p><b>Toggle Student List</b></p>
+<button (click)="toggleList()">Show/Hide List</button>
+
+<hr>
+
+@if (showList) {
+  <h3>Student List:</h3>
+  <ul>
+    @for (s of students; track s) {
+      <li>{{ s }}</li>
+    }
+  </ul>
+} @else {
+  <p>List Hidden</p>
+}

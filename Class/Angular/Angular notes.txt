@@ -1,0 +1,72 @@
+Q. Difference between angular and react
+
+Angular is typescript based fronted framework , developed by google
+It helps us build a single page application (SPA)
+SPA - where the page does not fully reload when navigation between different views.
+
+Angular Tools  -
+node js, npm (Node package manager), CLI(Command Line Interface)
+
+CLI - Used for create and manage angular apps
+
+Q :-
+1.How to create angular project
+2.what is npm and ng
+
+ng - is a initials of angular
+
+Steps to create angular project 
+1. check node version
+2. create folder Angular
+3. Open cmd
+4. type command -> npm install -g @angular/cli -> press enter
+5. type command -> ng new project_name -> press enter
+6. after above command it will ask some question 
+   first question press yes
+   for CSS press yes
+   for server-side rendering press no
+   last question press none (enter)
+7. project will be created in angular folder --> open in vs code
+8. in new terminal -> to run code --> ng serve
+9. follow the link the page will be displayed.
+
+
+---------------------------------------08-04-2026------------------------------------------------------
+Angular folder structure - 
+package.json - packages list, includes dependancies
+dependancies - part of project development  
+dev-dependancies - only used for local use
+angular.json- project configuration file
+style.css - global style file
+.gitignore - file and folders to excute from version control
+tfconfig- typescript configuration file
+index.html- main file
+app.congfig.js -- app configuration
+main.ts -- entry point of application
+src/app -- root folder
+
+// components - component is UI block structure 
+[command to create component - ng generate component component_name / ng g c component_name]
+
+--To bind new component steps - 
+   - for home componet--
+   -open home.ts then copy selector project_name
+   -then paste this in app.html inside <> brackets
+
+
+-----Data Binding------
+data binding connets UI to code
+
+types of data binding
+1.one way -
+ 1. interpolution -- show data from ts in html , syntax --{{}}
+ 2. property binding
+ 3. event binding
+
+2.two way -
+ -node modules
+
+
+--routing
+   -navigation between one page to another page
+   

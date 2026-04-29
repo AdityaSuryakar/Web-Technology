@@ -1,0 +1,37 @@
+/* Center everything */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f7fa;
+}
+
+/* Header */
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 20px;
+}
+
+/* Navbar */
+nav {
+  background-color: #2c3e50;
+  padding: 10px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #1abc9c;
+}
+
+/* Container */
+.container {
+  width: 60%;
+  margin: 30px auto;
+}

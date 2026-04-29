@@ -1,0 +1,20 @@
+h2 {
+  text-align: center;
+  color: #2c3e50;
+}
+
+ul {
+  width: 60%;
+  margin: 20px auto;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  background: white;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-left: 5px solid #1abc9c;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+}

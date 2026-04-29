@@ -1,0 +1,43 @@
+SQL - structure query language
+Is used to communication between relational database.
+mysql, postgresql, sqlserver are the popular databases.
+
+interview 
+store procedure, views
+
+
+insert data,
+update,
+delete
+
+create table,
+CREATE TABLE student(
+    prn INT NOT NULL,
+    name VARCHAR(20),
+    email VARCHAR(30)
+)
+INSERT INTO student(101, Priyanka, priyanka@gmail.com);
+INSERT INTO student(102, Pratiksha, pratiksha@gmail.com);
+
+select * from student;
+
+
+Connection node.js to mysql
+lab
+
+Web Socket - 
+* client and server are always connected.
+* it allows us real time communication.
+HTTP        -> client req ans res
+web socket  -> always connected
+example -> chatapp(WP), live stock price update, online gaming, notification
+
+Iinstall websocket -> npm install ws
+
+what is ORM - instead of writing sql queries we use js objects.
+select * from student;
+student.findALL
+
+Activities ->
+1 . deep study web socket, understand concept with example.
+2 .                                                                                                                                                  

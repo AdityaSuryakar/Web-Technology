@@ -1,0 +1,28 @@
+<h2>Add Student</h2>
+
+<form (ngSubmit)="addStudent()">
+
+  <label>Name:</label>
+  <input type="text" [(ngModel)]="student.name" name="name" required>
+  <br><br>
+
+  <label>Age:</label>
+  <input type="number" [(ngModel)]="student.age" name="age" required>
+  <br><br>
+
+  <label>Course:</label>
+  <input type="text" [(ngModel)]="student.course" name="course" required>
+  <br><br>
+
+  <button type="submit">Add Student</button>
+
+</form>
+
+<hr>
+
+<h3>Student List (Local)</h3>
+<ul>
+  <li *ngFor="let s of students">
+    {{ s.name }} - {{ s.age }} - {{ s.course }}
+  </li>
+</ul>

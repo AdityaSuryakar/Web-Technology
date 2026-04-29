@@ -1,0 +1,108 @@
+/* Global */
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #f1f5f9;
+}
+
+/* Layout */
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 230px;
+  height: 100vh;
+  background: #0f172a;
+  color: white;
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.2); /* 🔥 nice effect */
+}
+
+.sidebar h2 {
+  margin-bottom: 30px;
+  color: white;
+}
+
+.sidebar a {
+  display: block;
+  color: #cbd5f5;
+  text-decoration: none;
+  margin: 12px 0;
+}
+
+.sidebar a:hover {
+  color: #38bdf8;
+}
+
+/* Main */
+.main {
+  margin-left: 230px;     /* 🔥 IMPORTANT */
+  padding: 20px;
+  width: 100%;
+}
+
+/* Header */
+.header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Cards */
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+/* Button */
+button {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #3b82f6;
+  color: white;
+}
+
+.btn-delete {
+  background: #ef4444;
+  color: white;
+}
+
+/* Form */
+form {
+  background: white;
+  padding: 20px;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.app {
+  display: flex;
+  min-height: 100vh;   /* ADD THIS */
+}

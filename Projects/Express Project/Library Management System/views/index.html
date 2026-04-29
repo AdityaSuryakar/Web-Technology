@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Library Management System</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<nav>
+  <h2>📚 Library System</h2>
+  <div>
+    <a href="/">Home</a>
+    <a href="/books">Books</a>
+    <a href="/issue">Issue/Return</a>
+    <a href="/admin">Admin</a>
+    <a href="/student">My Books</a>
+  </div>
+</nav>
+
+<div class="container">
+  <h2>Welcome to Library Management System</h2>
+  <p style="color:#666; margin-bottom:20px;">Manage books, issue &amp; return, and track fines easily.</p>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="stat">
+      <div class="val" id="stat-titles">—</div>
+      <div class="lbl">Book Titles</div>
+    </div>
+    <div class="stat">
+      <div class="val" id="stat-avail">—</div>
+      <div class="lbl">Available</div>
+    </div>
+    <div class="stat">
+      <div class="val" id="stat-issued">—</div>
+      <div class="lbl">Issued</div>
+    </div>
+    <div class="stat">
+      <div class="val" id="stat-overdue">—</div>
+      <div class="lbl">Overdue</div>
+    </div>
+    <div class="stat">
+      <div class="val" id="stat-students">—</div>
+      <div class="lbl">Students</div>
+    </div>
+    <div class="stat">
+      <div class="val" id="stat-fines">—</div>
+      <div class="lbl">Total Fines</div>
+    </div>
+  </div>
+
+  <!-- Feature Cards -->
+  <div class="cards">
+    <a class="card" href="/books">
+      <div class="icon">📖</div>
+      <h3>Books</h3>
+      <p>Add, search &amp; manage books</p>
+    </a>
+    <a class="card" href="/issue">
+      <div class="icon">📤</div>
+      <h3>Issue / Return</h3>
+      <p>Issue books &amp; process returns</p>
+    </a>
+    <a class="card" href="/admin">
+      <div class="icon">🛡️</div>
+      <h3>Admin</h3>
+      <p>Manage students &amp; records</p>
+    </a>
+    <a class="card" href="/student">
+      <div class="icon">🎓</div>
+      <h3>My Books</h3>
+      <p>View issued books &amp; fines</p>
+    </a>
+  </div>
+</div>
+
+<div id="toast"></div>
+<script src="/js/script.js"></script>
+<script>loadStats(); setInterval(loadStats, 5000);</script>
+</body>
+</html>

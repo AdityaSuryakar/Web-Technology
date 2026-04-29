@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Books — Library System</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<nav>
+  <h2>📚 Library System</h2>
+  <div>
+    <a href="/">Home</a>
+    <a href="/books">Books</a>
+    <a href="/issue">Issue/Return</a>
+    <a href="/admin">Admin</a>
+    <a href="/student">My Books</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="box">
+    <h2>🎓 My Books (Student)</h2>
+    <div class="note">Fine policy: ₹2/day after the 14-day loan period.</div>
+    <div class="row">
+      <div>
+        <label>Select your name</label>
+        <select id="my-student-id">
+          <option value="">-- Select --</option>
+        </select>
+      </div>
+      <div style="display:flex;align-items:flex-end">
+        <button class="btn-blue" onclick="loadMyBooks()">View My Books</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="box">
+    <h2>📋 Issued to Me</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Book</th>
+          <th>Issue Date</th>
+          <th>Due Date</th>
+          <th>Return Date</th>
+          <th>Fine</th>
+        </tr>
+      </thead>
+      <tbody id="my-issues-tbody">
+        <tr><td colspan="5"><div class="empty">Select your name above to see your books.</div></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<div id="toast"></div>
+<script src="/js/script.js"></script>
+<script>populateStudentSelect();</script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<div style="font-family: Arial, sans-serif; padding: 20px;">
+  <h1>Angular Directives: Deep Study</h1>
+  <p><strong>Directives</strong> are classes that add additional behavior to elements in your applications. With Angular's built-in directives, you can manage forms, lists, styles, and what users see.</p>
+
+  <hr/>
+
+  <h2>1. Structural Directives</h2>
+  <p>Structural directives are responsible for HTML layout. They shape or reshape the DOM's structure, typically by adding, removing, or manipulating elements. They are preceded by an asterisk (<code>*</code>).</p>
+
+  <!-- ngIf -->
+  <h3>*ngIf</h3>
+  <p><strong>Definition:</strong> <code>*ngIf</code> conditionally includes a template based on the value of an expression. If the expression evaluates to true, the element is added to the DOM; otherwise, it is removed.</p>
+  <div style="background-color: #f4f4f4; padding: 10px; border-left: 4px solid #28a745;">
+    <strong>Code Example:</strong>
+    <pre>&lt;p *ngIf="isVisible"&gt;This paragraph is visible!&lt;/p&gt;</pre>
+    <strong>Output in Browser:</strong>
+    <button (click)="toggleVisibility()">Toggle Visibility</button>
+    <p *ngIf="isVisible" style="color: green;">This paragraph is visible!</p>
+  </div>
+
+  <!-- ngFor -->
+  <h3>*ngFor</h3>
+  <p><strong>Definition:</strong> <code>*ngFor</code> is a repeater directive that you can use to display a list of items. It loops through a given array and instantiates a template for each item.</p>
+  <div style="background-color: #f4f4f4; padding: 10px; border-left: 4px solid #28a745;">
+    <strong>Code Example:</strong>
+    <pre>&lt;li *ngFor="let student of students"&gt;{{ '{{' }} student {{ '}}' }}&lt;/li&gt;</pre>
+    <strong>Output in Browser:</strong>
+    <ul>
+      <li *ngFor="let student of students">{{ student }}</li>
+    </ul>
+  </div>
+
+  <!-- ngSwitch -->
+  <h3>ngSwitch, *ngSwitchCase</h3>
+  <p><strong>Definition:</strong> <code>ngSwitch</code> is like a JavaScript switch statement. It displays one element from among several possible elements, based on a switch condition.</p>
+  <div style="background-color: #f4f4f4; padding: 10px; border-left: 4px solid #28a745;">
+    <strong>Code Example:</strong>
+    <pre>&lt;div [ngSwitch]="selectedSubject"&gt;
+  &lt;p *ngSwitchCase="'Math'"&gt;Mathematics&lt;/p&gt;
+  &lt;p *ngSwitchDefault&gt;No Subject Selected&lt;/p&gt;
+&lt;/div&gt;</pre>
+    <strong>Output in Browser:</strong>
+    <br>
+    <button (click)="setSubject('Math')">Math</button>
+    <button (click)="setSubject('Science')">Science</button>
+    <button (click)="setSubject('English')">English</button>
+    <div [ngSwitch]="selectedSubject" style="margin-top: 10px; font-weight: bold;">
+      <p *ngSwitchCase="'Math'">Subject: Mathematics 📐</p>
+      <p *ngSwitchCase="'Science'">Subject: Science 🔬</p>
+      <p *ngSwitchCase="'English'">Subject: English 📚</p>
+      <p *ngSwitchDefault>Unknown Subject</p>
+    </div>
+  </div>
+
+  <hr/>
+
+  <h2>2. Attribute Directives</h2>
+  <p>Attribute directives change the appearance or behavior of an element, component, or another directive.</p>
+
+  <!-- ngStyle -->
+  <h3>[ngStyle]</h3>
+  <p><strong>Definition:</strong> The <code>[ngStyle]</code> directive lets you set a given DOM element's style properties dynamically within a component.</p>
+  <div style="background-color: #f4f4f4; padding: 10px; border-left: 4px solid #ffaa00;">
+    <strong>Code Example:</strong>
+    <pre>&lt;p [ngStyle]="&#123; 'color': isHighlight ? 'blue' : 'black' &#125;"&gt;Styled Text&lt;/p&gt;</pre>
+    <strong>Output in Browser:</strong>
+    <button (click)="toggleHighlight()">Toggle Highlight Style</button>
+    <div [ngStyle]="{
+      'color': isHighlight ? '#fff' : '#000',
+      'background-color': isHighlight ? '#007bff' : 'transparent',
+      'padding': isHighlight ? '5px' : '0px',
+      'border-radius': '4px',
+      'transition': 'all 0.3s'
+    }">
+      This text changes style based on the component's state!
+    </div>
+  </div>
+
+  <!-- ngClass -->
+  <h3>[ngClass]</h3>
+  <p><strong>Definition:</strong> The <code>[ngClass]</code> directive allows you to add or remove CSS classes on an HTML element.</p>
+  <div style="background-color: #f4f4f4; padding: 10px; border-left: 4px solid #ffaa00;">
+    <strong>Code Example:</strong>
+    <pre>&lt;div [ngClass]="&#123; 'active-box': isActive, 'inactive-box': !isActive &#125;"&gt;Box&lt;/div&gt;</pre>
+    <strong>Output in Browser:</strong>
+    <button (click)="toggleActive()">Toggle Active Class</button>
+    <div [ngClass]="{ 'active-box': isActive, 'inactive-box': !isActive }" style="margin-top: 10px; padding: 10px; border: 2px solid #ccc; text-align: center;">
+      {{ isActive ? 'Active State' : 'Inactive State' }}
+    </div>
+  </div>
+</div>

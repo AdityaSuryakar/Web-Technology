@@ -1,0 +1,64 @@
+<div style="font-family: Arial, sans-serif; padding: 20px;">
+  <h1>Angular Data Binding Concepts</h1>
+  <p><strong>Data Binding</strong> is the core concept in Angular that allows communication between a component (TypeScript code) and its view (HTML template). It synchronizes the data, making the application dynamic and interactive.</p>
+
+  <h2>Types of Data Binding</h2>
+  <ul>
+    <li><strong>One-Way Data Binding:</strong> Data flows in a single direction (either from component to view or view to component).</li>
+    <li><strong>Two-Way Data Binding:</strong> Data flows in both directions simultaneously.</li>
+  </ul>
+
+  <hr/>
+
+  <h2>1-Way Data Binding</h2>
+  <p>In one-way data binding, information passes in one direction. It includes three main types:</p>
+
+  <!-- 1. Interpolation -->
+  <h3>1. Interpolation</h3>
+  <p><strong>Definition:</strong> Interpolation allows embedding expressions into marked-up text in the template. By default, it uses double curly braces <code>{{ '{{' }} {{ '}}' }}</code>.</p>
+  <div style="background-color: #f4f4f4; padding: 10px; border-left: 4px solid #005b9f;">
+    <strong>Code Example:</strong>
+    <pre>&lt;p&gt;Course Name: {{ '{{' }} courseName {{ '}}' }}&lt;/p&gt;</pre>
+    <strong>Output in Browser:</strong>
+    <p>Course Name: {{ courseName }}</p>
+  </div>
+
+  <!-- 2. Property Binding -->
+  <h3>2. Property Binding</h3>
+  <p><strong>Definition:</strong> Property binding allows you to set properties of HTML elements or directives. It uses square brackets <code>[]</code>.</p>
+  <div style="background-color: #f4f4f4; padding: 10px; border-left: 4px solid #005b9f;">
+    <strong>Code Example:</strong>
+    <pre>&lt;button [disabled]="isButtonDisabled"&gt;Disabled Button&lt;/button&gt;</pre>
+    <strong>Output in Browser:</strong>
+    <p><button [disabled]="isButtonDisabled">Disabled Button (Property Binding)</button></p>
+  </div>
+
+  <!-- 3. Event Binding -->
+  <h3>3. Event Binding</h3>
+  <p><strong>Definition:</strong> Event binding allows you to listen for and respond to user actions like keystrokes, mouse clicks, and touches. It uses parentheses <code>()</code>.</p>
+  <div style="background-color: #f4f4f4; padding: 10px; border-left: 4px solid #005b9f;">
+    <strong>Code Example:</strong>
+    <pre>&lt;button (click)="onButtonClick()"&gt;Click Me!&lt;/button&gt;</pre>
+    <strong>Output in Browser:</strong>
+    <p>
+      <button (click)="onButtonClick()">Click Me!</button>
+      <span> Click count: {{ clickCount }}</span>
+    </p>
+  </div>
+
+  <hr/>
+
+  <h2>2-Way Data Binding</h2>
+  <p><strong>Definition:</strong> Two-way binding allows for a two-way synchronization between the component architecture and the template. It uses the "bananas in a box" syntax <code>[(ngModel)]</code> and requires <code>FormsModule</code>.</p>
+  <div style="background-color: #f4f4f4; padding: 10px; border-left: 4px solid #cc0000;">
+    <strong>Code Example:</strong>
+    <pre>&lt;input [(ngModel)]="userName" placeholder="Enter name" /&gt;</pre>
+    <strong>Output in Browser:</strong>
+    <p>
+      <label>Edit Name: </label>
+      <input [(ngModel)]="userName" placeholder="Enter name">
+    </p>
+    <p>Current User: <strong>{{ userName }}</strong></p>
+    <p>Character Count: <span style="color: blue; font-weight: bold;">{{ userName.length }}</span></p>
+  </div>
+</div>

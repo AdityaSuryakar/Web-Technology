@@ -1,0 +1,9 @@
+<h2>Rooms</h2>
+
+<div *ngFor="let room of rooms" class="card">
+  <h3>Room {{room.number}}</h3>
+  
+  <p [ngClass]="room.occupied ? 'occupied' : 'available'">
+    {{room.occupied ? 'Occupied' : 'Available'}}
+  </p>
+</div>

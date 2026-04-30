@@ -27,9 +27,9 @@ console.log(Math.ceil(4.6));//5
 console.log(Math.floor(4.6));//4
 console.log(Math.min(1,2,3,4));//1
 console.log(Math.max(5,6,7,8));//8
-//HW  : Math.random()
-
-
+const num1 = Math.random();
+const num2 = Math.random();
+const num3 = num1+num2;
 
 
 

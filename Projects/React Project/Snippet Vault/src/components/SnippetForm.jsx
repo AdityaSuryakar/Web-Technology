@@ -14,7 +14,7 @@ const LANGUAGES = [
   { value: "other",      label: "Other",      cls: "lang-other" },
 ];
 
-function SnippetForm({ onSubmit, existingSnippet }) {
+function SnippetForm({ onSubmit, existingSnippet, saving = false }) {
   const navigate = useNavigate();
 
   const [title,    setTitle]    = useState(existingSnippet?.title    || "");
@@ -35,17 +35,14 @@ function SnippetForm({ onSubmit, existingSnippet }) {
       .filter(Boolean);
 
     const snippet = {
-      id:          existingSnippet ? existingSnippet.id : Date.now(),
       title:       title.trim(),
       language,
       code,
       tags,
       description: description.trim(),
-      createdAt:   existingSnippet?.createdAt || new Date().toISOString(),
     };
 
     onSubmit(snippet);
-    navigate("/snippets");
   };
 
   return (
@@ -60,6 +57,7 @@ function SnippetForm({ onSubmit, existingSnippet }) {
           value={title}
           onChange={e => setTitle(e.target.value)}
           required
+          disabled={saving}
         />
       </div>
 
@@ -71,6 +69,7 @@ function SnippetForm({ onSubmit, existingSnippet }) {
             className="form-select"
             value={language}
             onChange={e => setLanguage(e.target.value)}
+            disabled={saving}
           >
             {LANGUAGES.map(l => (
               <option key={l.value} value={l.value}>{l.label}</option>
@@ -86,6 +85,7 @@ function SnippetForm({ onSubmit, existingSnippet }) {
             placeholder="Brief note about this snippet…"
             value={description}
             onChange={e => setDescription(e.target.value)}
+            disabled={saving}
           />
         </div>
       </div>
@@ -99,6 +99,7 @@ function SnippetForm({ onSubmit, existingSnippet }) {
           placeholder="react, hooks, async, utility…"
           value={tagsRaw}
           onChange={e => setTagsRaw(e.target.value)}
+          disabled={saving}
         />
         <div className="tags-hint">Separate multiple tags with commas</div>
       </div>
@@ -113,16 +114,21 @@ function SnippetForm({ onSubmit, existingSnippet }) {
           onChange={e => setCode(e.target.value)}
           required
           spellCheck={false}
+          disabled={saving}
         />
       </div>
 
       {/* Actions */}
       <div className="form-actions">
-        <button type="button" className="btn-cancel" onClick={() => navigate("/snippets")}>
+        <button type="button" className="btn-cancel" onClick={() => navigate("/snippets")} disabled={saving}>
           Cancel
         </button>
-        <button type="submit" className="btn-submit">
-          {existingSnippet ? "💾 Update Snippet" : "✦ Save Snippet"}
+        <button type="submit" className="btn-submit" disabled={saving}>
+          {saving
+            ? "⏳ Saving…"
+            : existingSnippet
+              ? "💾 Update Snippet"
+              : "✦ Save Snippet"}
         </button>
       </div>
     </form>

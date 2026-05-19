@@ -1,16 +1,27 @@
+import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import SnippetForm from "../components/SnippetForm";
+import { updateSnippet } from "../api/snippetApi";
 
 function EditSnippet({ snippets, setSnippets }) {
-  const { id } = useParams();
+  const { id }   = useParams();
   const navigate = useNavigate();
+  const [saving, setSaving] = useState(false);
+  const [error,  setError]  = useState(null);
 
-  // Same pattern as original EditTask
-  const snippet = snippets.find(s => s.id === Number(id));
+  const snippet = snippets.find((s) => s.id === Number(id));
 
-  const updateSnippet = (updated) => {
-    setSnippets(snippets.map(s => s.id === updated.id ? updated : s));
-    navigate("/snippets");
+  const handleUpdate = async (snippetData) => {
+    try {
+      setSaving(true);
+      setError(null);
+      const updated = await updateSnippet(id, snippetData);
+      setSnippets((prev) => prev.map((s) => (s.id === updated.id ? updated : s)));
+      navigate("/snippets");
+    } catch (err) {
+      setError("Failed to update snippet. Please try again.");
+      setSaving(false);
+    }
   };
 
   if (!snippet) {
@@ -27,7 +38,8 @@ function EditSnippet({ snippets, setSnippets }) {
     <div className="container form-page">
       <div className="form-card">
         <h2 className="form-title">✏️ Edit Snippet</h2>
-        <SnippetForm onSubmit={updateSnippet} existingSnippet={snippet} />
+        {error && <div className="form-error">⚠️ {error}</div>}
+        <SnippetForm onSubmit={handleUpdate} existingSnippet={snippet} saving={saving} />
       </div>
     </div>
   );

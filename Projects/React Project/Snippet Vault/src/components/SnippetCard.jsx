@@ -69,6 +69,9 @@ function SnippetCard({ snippet, onDelete, onTagClick }) {
         </div>
 
         <div className="card-actions">
+          <Link to={`/view-snippet/${snippet.id}`}>
+            <button className="btn-view">👁 View</button>
+          </Link>
           <Link to={`/edit-snippet/${snippet.id}`}>
             <button className="btn-edit">✏️ Edit</button>
           </Link>

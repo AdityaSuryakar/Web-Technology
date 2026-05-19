@@ -2,14 +2,20 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import SnippetCard from "../components/SnippetCard";
 import { LANGUAGES } from "../components/SnippetForm";
+import { deleteSnippet } from "../api/snippetApi";
 
 function Snippets({ snippets, setSnippets }) {
   const [search, setSearch]   = useState("");
   const [langFilter, setLang] = useState("all");
   const [tagFilter,  setTag]  = useState("");
 
-  const handleDelete = (id) => {
-    setSnippets(snippets.filter(s => s.id !== id));
+  const handleDelete = async (id) => {
+    try {
+      await deleteSnippet(id);
+      setSnippets((prev) => prev.filter((s) => s.id !== id));
+    } catch (err) {
+      alert("Failed to delete snippet. Please try again.");
+    }
   };
 
   const handleTagClick = (tag) => {
